@@ -20,14 +20,14 @@ public class Document {
     )
 
 
-    private Long id;
+    private int id;
     private String label;
     private String documentName;
 
     public Document() {
     }
 
-    public Document(Long id, String label, String documentName) {
+    public Document(int id, String label, String documentName) {
         this.id = id;
         this.label = label;
         this.documentName = documentName;
@@ -38,11 +38,11 @@ public class Document {
         this.documentName = documentName;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

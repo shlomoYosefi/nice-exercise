@@ -1,4 +1,4 @@
-package com.exercisenice;
+package com.exercisenice.response;
 
 public class ResponseServer {
 

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -29,12 +30,12 @@ public class DocumentController {
     }
 
     @GetMapping(path = "{id}")
-    public ResponseEntity getDocumentById(@PathVariable("id") Long id){
+    public ResponseEntity<Document> getDocumentById(@PathVariable("id") int id) throws IOException {
        return documentService.getDocumentById(id);
     }
 
     @GetMapping
-    public List<Document> getAllDocument(){
+    public List<Document> getAllDocument() throws IOException {
         return documentService.getDocuments();
     }
 
@@ -44,7 +45,7 @@ public class DocumentController {
     }
 
     @DeleteMapping(path = "{id}")
-    public ResponseEntity deleteDocument(@PathVariable("id") Long id ){
+    public ResponseEntity deleteDocument(@PathVariable("id") int id ){
        return documentService.deletDocument(id);
     }
 
